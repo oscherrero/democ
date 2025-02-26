@@ -63,10 +63,6 @@
         
     function init() {
       var options =localStorage.getItem("options")
-      if (!options){
-        location.reload(true);
-      }
-      
       document.getElementById("granja").innerHTML = options
       var stGranjaCod = localStorage.getItem("granja") != null ? localStorage.getItem("granja") : '{"granja":"","cod":""}';
       var granjaCod = JSON.parse(stGranjaCod)
@@ -84,6 +80,9 @@
         root.style.setProperty('font-size', '2vw');
       }
       cargarHTML()
+      if (!options){
+        location.reload(true);
+      }
     }
   
     function info() {
